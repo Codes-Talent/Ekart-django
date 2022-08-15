@@ -1,4 +1,3 @@
-from statistics import quantiles
 from django.db import models
 from store.models import Product, Variation
 from accounts.models import Account

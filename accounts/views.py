@@ -117,10 +117,8 @@ def login(request):
             url = request.META.get('HTTP_REFERER')
             try:
                 query = requests.utils.urlparse(url).query
-                print('query -> ', query)
                 # ?next=/cart/checkout/
                 params = dict(x.split('=') for x in query.split('&'))
-                print('params -> ', params)
                 if 'next' in params:
                     nextPage = params['next']
                     return redirect(nextPage)
