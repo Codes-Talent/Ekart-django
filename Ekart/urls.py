@@ -22,7 +22,7 @@ from django.conf import settings
 
 
 urlpatterns = [
-    path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')), #this is the fake url and make fake admin form if use this url the stor his IP and block this IP and secure from the hacker
+    path('admin/', include(('admin_honeypot.urls', 'admin_honeypot'), namespace='admin_honeypot')), #this is the fake url and make fake admin form if use this url the stor his IP and block this IP and secure from the hacker
     path('securelogin/', admin.site.urls),
     path('', views.home, name='home'),
     path('store/', include('store.urls')),
